@@ -1,0 +1,27 @@
+/* your styles go here */
+.newest {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.badge {
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    color: #fff;
+}
+
+.tb-add {
+    margin: 0;
+    width: 100%
+}
+
+.tb-add label {
+    font-weight: bold;
+    margin: 10px 30px 10px 10px;
+}
+
+.tb-add input, .tb-add select, .tb-add textarea {
+    width: 100%;
+    height: 30px;
+}
