@@ -72,3 +72,9 @@
         </div>
     </div>
 @endsection
+
+@section('custom-js')
+    <script type="text/javascript">
+        document.title = "{{ $item->title }} | Pylbox";
+    </script>
+@endsection

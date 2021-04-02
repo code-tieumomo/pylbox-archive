@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$boxes = Box::all();
+    	$boxes = Box::limit(6)->get();
     	$items = Item::orderBy('id', 'desc')->limit(6)->get();
 
     	return view('home', [

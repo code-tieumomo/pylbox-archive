@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreItemRequest;
+use App\Models\Box;
 use App\Models\Item;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -25,7 +27,11 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        $boxes = Box::all();
+
+        return view('add-new-item', [
+            'boxes' => $boxes
+        ]);
     }
 
     /**
@@ -34,9 +40,25 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreItemRequest $request)
     {
-        //
+        $item = Item::create([
+            'title'       => $request->title,
+            'box_id'      => $request->box_id,
+            'image'       => $request->image,
+            'source'      => $request->source,
+            'source_link' => $request->source_link,
+            'sumary'      => $request->sumary,
+            'detail'      => $request->detail
+        ]);
+
+        $result = [
+            'status' => 200,
+            'id' => $item->id,
+            'message' => 'New item added'
+        ];
+
+        return $result;
     }
 
     /**

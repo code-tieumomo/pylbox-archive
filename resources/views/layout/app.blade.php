@@ -21,6 +21,9 @@
         <link rel="shortcut icon" href="https://img.icons8.com/pastel-glyph/128/000000/box--v3.png">
         <!-- AOS -->
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- ToastJS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/Toast.css') }}">
+        @yield('custom-css')
     </head>
     <body>
         <div class="sidebar">
@@ -32,7 +35,7 @@
                             <a id="menu-home" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href={{ route('home.index') }}>Home</a>
                         </li>
                         <li class="mb-2 pb-1">
-                            <a id="menu-add-new-item" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="add-new-item.html">Add new item</a>
+                            <a id="menu-add-new-item" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="{{ route('items.create') }}">Add new item</a>
                         </li>
                         <li class="mb-2 pb-1">
                             <a id="menu-documentation" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="javascript:void(0)">Documentation</a>
@@ -176,12 +179,12 @@
             </footer>
         </div>
         <!-- JavaScript files-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
-        <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-        <script src="vendor/lightbox2/js/lightbox.min.js"></script>
-        <script src="js/front.js"></script>
+        <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('vendor/masonry-layout/masonry.pkgd.min.js') }}"></script>
+        <script src="{{ asset('vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('vendor/lightbox2/js/lightbox.min.js') }}"></script>
+        <script src="{{ asset('js/front.js') }}"></script>
         <script>
             // ------------------------------------------------------- //
             //   Inject SVG Sprite - 
@@ -214,6 +217,8 @@
                 mirror: true
             });
         </script>
+        <!-- ToastJS -->
+        <script type="text/javascript" src="{{ asset('js/Toast.js') }}"></script>
         @yield('custom-js')
         <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
