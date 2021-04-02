@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Box;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,6 +23,6 @@ class Item extends Model
 
     public function box()
     {
-    	return $this->belongsTo(Box);
+    	return $this->belongsTo(Box::class);
     }
 }

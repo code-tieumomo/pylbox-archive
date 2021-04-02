@@ -37,7 +37,7 @@
                                 <ul class="list-inline listing-tags m-0">
                                     <li class="list-inline-item"><a id="detail-1" class="reset-anchor font-weight-normal text-gray text-small detail-1" target="_blank" href="{{ $item->source_link }}">{{ $item->source }}</a></li>
                                 </ul>
-                                <a class="reset-anchor d-block listing-img-holder detail-1" href="detail.html"><img class="img-fluid" id="img-newest-1" src="{{ $item->image }}" alt="" style="max-height: 200px;">
+                                <a class="reset-anchor d-block listing-img-holder detail-1" href="{{ route('items.show', ['id'=>$item->id]) }}"><img class="img-fluid" id="img-newest-1" src="{{ $item->image }}" alt="" style="max-height: 200px;">
                                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"><span>Detail</span>
                                         <svg class="svg-icon text-primary svg-icon-sm ml-2">
                                             <use xlink:href="#arrow-right-1"></use>
@@ -45,7 +45,7 @@
                                     </p>
                                 </a>
                             </div>
-                            <div class="py-3"><a class="reset-anchor detail-1" href="detail.html">
+                            <div class="py-3"><a class="reset-anchor detail-1" href="{{ route('items.show', ['id'=>$item->id]) }}">
                                 <h2 class="h5 listing-item-heading" id ="title-1">{{ $item->title }}</h2></a>
                                 <p class="text-small mb-0 listing-item-description">{{ $item->sumary }}</p>
                             </div>
@@ -94,5 +94,7 @@
 @section('custom-js')
     <script type="text/javascript">
         document.title = 'Home | Pylbox';
+
+        $("#menu-home").addClass('active');
     </script>
 @endsection

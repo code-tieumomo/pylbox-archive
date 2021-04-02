@@ -29,13 +29,13 @@
                 <div class="sidebar-menu-holder flex-grow-1">
                     <ul class="sidebar-menu list-unstyled">
                         <li class="mb-2 pb-1">
-                            <a class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small active" href="index.html">Home</a>
+                            <a id="menu-home" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href={{ route('home.index') }}>Home</a>
                         </li>
                         <li class="mb-2 pb-1">
-                            <a class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="add-new-item.html">Add new item</a>
+                            <a id="menu-add-new-item" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="add-new-item.html">Add new item</a>
                         </li>
                         <li class="mb-2 pb-1">
-                            <a class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="javascript:void(0)">Documentation</a>
+                            <a id="menu-documentation" class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="javascript:void(0)">Documentation</a>
                         </li>
                     </ul>
                 </div>

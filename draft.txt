@@ -1,0 +1,2 @@
+<li class="list-inline-item" ><a id="btn-share-to-facebook" class="reset-anchor social-share-link facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https://bootstraptemple.com&display=popup&ref=plugin&src=share_button"><i class="fab fa-facebook-f mr-2"></i>Share</a></li>
+<li class="list-inline-item"><a class="reset-anchor social-share-link instagram" href="#"><i class="fab fa-instagram mr-2"></i>Share</a></li>
