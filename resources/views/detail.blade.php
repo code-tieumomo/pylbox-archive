@@ -43,69 +43,33 @@
 
                     <h2 class="h3 mb-4">Share</h2>
                     <ul class="list-inline">
-                        <div class="list-inline-item fb-share-button" data-href="{{ route('items.show', ['id'=>$item->id]) }}" data-layout="button" data-size="large"><a target="_blank" href="#" class="fb-xfbml-parse-ignore">Share</a></div>
+                        <div class="list-inline-item fb-share-button" data-href="{{ route('items.show', ['id'=>$item->id]) }}" data-layout="button" data-size="large"><a target="_blank" href="#" class="fb-xfbml-parse-ignore">Loading ...</a></div>
                     </ul>
                 </div>
             </div>
 
-            <h2 id="h2-relate" class="h3 mb-4">Related projects</h2>
+            <h2 id="h2-relate" class="h3 mb-4">Related items</h2>
             <div id="item-relate" class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="listing-item pl-0">
-                        <div class="position-relative">
-                            <a class="reset-anchor d-block listing-img-holder" href="detail.html">
-                                <img class="img-fluid rounded-lg" src="img/portfolio-6.jpg" alt="">
-                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
-                                    <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                        <use xlink:href="#arrow-right-1"> </use>
-                                    </svg>
-                                </p>
-                            </a>
-                        </div>
-                        <div class="py-3"><a class="reset-anchor" href="detail.html">
-                            <h2 class="h5 listing-item-heading">Banana Lady</h2></a>
-                            <p class="text-small mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="listing-item pl-0">
-                        <div class="position-relative">
-                            <a class="reset-anchor d-block listing-img-holder" href="detail.html">
-                                <img class="img-fluid rounded-lg" src="img/portfolio-4.jpg" alt="">
-                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
-                                    <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                        <use xlink:href="#arrow-right-1"> </use>
-                                    </svg>
-                                </p>
-                            </a>
-                        </div>
-                        <div class="py-3"><a class="reset-anchor" href="detail.html">
-                            <h2 class="h5 listing-item-heading">Treasure Haunted</h2></a>
-                            <p class="text-small mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                @foreach ($relatedItems as $item)
+                    <div data-aos="fade-up-right" class="col-lg-4 mb-4">
+                        <div class="listing-item pl-0">
+                            <div class="position-relative">
+                                <a class="reset-anchor d-block listing-img-holder" href="{{ route('items.show', ['id' => $item->id]) }}">
+                                    <img class="img-fluid rounded-lg" src="{{ $item->image }}" alt="">
+                                    <p class="mb-0 text-primary small d-flex align-items-center listing-btn"><span>Look inside</span>
+                                        <svg class="svg-icon text-primary svg-icon-sm ml-2">
+                                            <use xlink:href="#arrow-right-1"></use>
+                                        </svg>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="py-3"><a class="reset-anchor" href="{{ route('items.show', ['id' => $item->id]) }}">
+                                <h2 class="h5 listing-item-heading">{{ $item->title }}</h2></a>
+                                <p class="text-small mb-0 listing-item-description">{{ $item->sumary }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="listing-item pl-0">
-                        <div class="position-relative">
-                            <a class="reset-anchor d-block listing-img-holder" href="detail.html">
-                                <img class="img-fluid rounded-lg" src="img/portfolio-5.jpg" alt="">
-                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
-                                    <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                        <use xlink:href="#arrow-right-1"> </use>
-                                    </svg>
-                                </p>
-                            </a>
-                        </div>
-                        <div class="py-3"><a class="reset-anchor" href="detail.html">
-                            <h2 class="h5 listing-item-heading">Best Friends</h2></a>
-                            <p class="text-small mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

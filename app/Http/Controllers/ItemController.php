@@ -50,9 +50,13 @@ class ItemController extends Controller
         $id = $request->id;
         try {
             $item = Item::findOrFail($id);
+            $relatedItems = Item::whereHas('box', function($query) use ($item) {
+                return $query->where('id', '=', $item->box_id);
+            })->where('id', '!=', $item->id)->orderBy('id', 'desc')->limit(3)->get();
             
             return view('detail', [
-                'item' => $item
+                'item'         => $item,
+                'relatedItems' => $relatedItems
             ]);
         } catch(ModelNotFoundException $e) {
 
