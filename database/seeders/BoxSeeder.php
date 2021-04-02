@@ -15,24 +15,24 @@ class BoxSeeder extends Seeder
     public function run()
     {
         Box::create([
-            'name'        =>'Codes',
-            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'name'        => 'Codes',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
         ]);
         Box::create([
-            'name'        =>'Foods',
-            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'name'        => 'Foods',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
         ]);
         Box::create([
-            'name'        =>'Games',
-            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'name'        => 'Games',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
         ]);
         Box::create([
-            'name'        =>'Musics',
-            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'name'        => 'Musics',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
         ]);
         Box::create([
-            'name'        =>'XXXs',
-            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'name'        => 'XXXs',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
         ]);
     }
 }

@@ -30,64 +30,28 @@
             </style>
 
             <div id="list-newest" class="masonry-wrapper">
-                <div data-aos="fade-up-right" class="col-lg-4 col-md-6 grid-item mb-4">
-                    <div class="listing-item">
-                        <div class="position-relative">
-                            <ul class="list-inline listing-tags m-0">
-                                <li class="list-inline-item"><a id="detail-1" class="reset-anchor font-weight-normal text-gray text-small detail-1" href="detail.html">Creative</a></li>
-                            </ul>
-                            <a class="reset-anchor d-block listing-img-holder detail-1" href="detail.html"><img class="img-fluid" id="img-newest-1" src="img/portfolio-1.jpg" alt="" style="max-height: 200px;">
-                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Detail</span>
-                                    <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                        <use xlink:href="#arrow-right-1"> </use>
-                                    </svg>
-                                </p>
-                            </a>
-                        </div>
-                        <div class="py-3"><a class="reset-anchor detail-1" href="detail.html">
-                            <h2 class="h5 listing-item-heading" id ="title-1">Loading <img src="img/loading-2.gif" style="width: 24px;"/></h2></a>
-                            <p class="text-small mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                    </div>
-                </div>
-                <div data-aos="zoom-in" class="col-lg-4 col-md-6 grid-item mb-4">
-                    <div class="listing-item">
-                        <div class="position-relative">
-                            <ul class="list-inline listing-tags m-0">
-                                <li class="list-inline-item"><a id="detail-2" class="reset-anchor font-weight-normal text-gray text-small detail-2" href="detail.html">Creative</a></li>
-                            </ul><a class="reset-anchor d-block listing-img-holder detail-2" href="detail.html"><img class="img-fluid" id="img-newest-2" src="img/portfolio-2.jpg" alt="" style="max-height: 200px;">
-                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Detail</span>
-                                    <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                        <use xlink:href="#arrow-right-1"> </use>
-                                    </svg>
-                                </p>
-                            </a>
-                        </div>
-                        <div class="py-3"><a class="reset-anchor detail-2" href="detail.html">
-                            <h2 class="h5 listing-item-heading" id ="title-2">Loading <img src="img/loading-2.gif" style="width: 24px;"/></h2></a>
-                            <p class="text-small mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                @foreach ($items as $item)
+                    <div data-aos="zoom-in" class="col-lg-4 col-md-6 grid-item mb-4">
+                        <div class="listing-item">
+                            <div class="position-relative">
+                                <ul class="list-inline listing-tags m-0">
+                                    <li class="list-inline-item"><a id="detail-1" class="reset-anchor font-weight-normal text-gray text-small detail-1" target="_blank" href="{{ $item->source_link }}">{{ $item->source }}</a></li>
+                                </ul>
+                                <a class="reset-anchor d-block listing-img-holder detail-1" href="detail.html"><img class="img-fluid" id="img-newest-1" src="{{ $item->image }}" alt="" style="max-height: 200px;">
+                                    <p class="mb-0 text-primary small d-flex align-items-center listing-btn"><span>Detail</span>
+                                        <svg class="svg-icon text-primary svg-icon-sm ml-2">
+                                            <use xlink:href="#arrow-right-1"></use>
+                                        </svg>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="py-3"><a class="reset-anchor detail-1" href="detail.html">
+                                <h2 class="h5 listing-item-heading" id ="title-1">{{ $item->title }}</h2></a>
+                                <p class="text-small mb-0 listing-item-description">{{ $item->sumary }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div data-aos="fade-up-left" class="col-lg-4 col-md-6 grid-item mb-4">
-                    <div class="listing-item">
-                        <div class="position-relative">
-                            <ul class="list-inline listing-tags m-0">
-                                <li class="list-inline-item"><a id="detail-3" class="reset-anchor font-weight-normal text-gray text-small detail-3" href="detail.html">Creative</a></li>
-                            </ul><a class="reset-anchor d-block listing-img-holder detail-3" href="detail.html"><img class="img-fluid" id="img-newest-3" src="img/portfolio-3.jpg" alt="" style="max-height: 200px;">
-                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Detail</span>
-                                    <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                        <use xlink:href="#arrow-right-1"> </use>
-                                    </svg>
-                                </p>
-                            </a>
-                        </div>
-                        <div class="py-3"><a class="reset-anchor detail-3" href="detail.html">
-                            <h2 class="h5 listing-item-heading" id ="title-3">Loading <img src="img/loading-2.gif" style="width: 24px;"/></h2></a>
-                            <p class="text-small mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <marquee data-aos="fade-right" class="newest" behavior="alternate" direction="left" scrollamount="5">
