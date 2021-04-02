@@ -34,6 +34,9 @@
                         <li class="mb-2 pb-1">
                             <a class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="add-new-item.html">Add new item</a>
                         </li>
+                        <li class="mb-2 pb-1">
+                            <a class="sidebar-link h6 text-uppercase letter-spacing-2 font-weight-bold text-small" href="javascript:void(0)">Documentation</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="px-4 py-3">

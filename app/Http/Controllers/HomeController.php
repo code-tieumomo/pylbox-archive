@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
     	$boxes = Box::all();
-    	$items = Item::orderBy('id', 'desc')->limit(3)->get();
+    	$items = Item::orderBy('id', 'desc')->limit(6)->get();
 
     	return view('home', [
     		'boxes' => $boxes,

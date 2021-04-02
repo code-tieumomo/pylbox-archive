@@ -31,7 +31,7 @@
 
             <div id="list-newest" class="masonry-wrapper">
                 @foreach ($items as $item)
-                    <div data-aos="zoom-in" class="col-lg-4 col-md-6 grid-item mb-4">
+                    <div data-aos="zoom-in-right" class="col-lg-4 col-md-6 grid-item mb-4">
                         <div class="listing-item">
                             <div class="position-relative">
                                 <ul class="list-inline listing-tags m-0">
