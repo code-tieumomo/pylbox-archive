@@ -39,11 +39,9 @@
                         </ul>
                     </div>
 
-                    <script src="//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.8"></script>
-
                     <h2 class="h3 mb-4">Share</h2>
                     <ul class="list-inline">
-                        <div class="list-inline-item fb-share-button" data-href="{{ route('items.show', ['id'=>$item->id]) }}" data-layout="button" data-size="large"><a target="_blank" href="#" class="fb-xfbml-parse-ignore">Loading ...</a></div>
+                        <li class="list-inline-item"><a id="btn-share-to-facebook" class="reset-anchor social-share-link facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u={{ route('items.show', ['id' => $item->id]) }}&display=popup&ref=plugin&src=share_button"><i class="fab fa-facebook-f mr-2"></i>Share</a></li>
                     </ul>
                 </div>
             </div>

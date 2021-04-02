@@ -25,7 +25,7 @@
     <body>
         <div class="sidebar">
             <div class="sidebar-inner d-flex flex-column">
-                <div class="px-4 py-5"><a href="index.html"><img src="https://img.icons8.com/pastel-glyph/256/000000/box--v3.png" alt="" width="90"></a></div>
+                <div class="px-4 py-5"><a href="{{ route('home.index') }}"><img src="https://img.icons8.com/pastel-glyph/256/000000/box--v3.png" alt="" width="90"></a></div>
                 <div class="sidebar-menu-holder flex-grow-1">
                     <ul class="sidebar-menu list-unstyled">
                         <li class="mb-2 pb-1">
@@ -58,7 +58,7 @@
                             <svg class="svg-icon svg-icon-heavy svg-icon-sm text-dark">
                                 <use xlink:href="#menu-hamburger-1"> </use>
                             </svg>
-                        </button><a class="navbar-brand" href="index.html"><img src="https://img.icons8.com/pastel-glyph/256/000000/box--v3.png" alt="" width="50"></a>
+                        </button><a class="navbar-brand" href="{{ route('home.index') }}"><img src="https://img.icons8.com/pastel-glyph/256/000000/box--v3.png" alt="" width="50"></a>
                     </nav>
                 </header>
             </div>
