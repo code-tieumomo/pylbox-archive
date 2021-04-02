@@ -39,8 +39,7 @@
                         </ul>
                     </div>
 
-                    <div id="fb-root"></div>
-                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_EN/sdk.js#xfbml=1&autoLogAppEvents=1&version=v10.0&appId=209323426840876" nonce="jCFPcBWL"></script>
+                    <script src="//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.8"></script>
 
                     <h2 class="h3 mb-4">Share</h2>
                     <ul class="list-inline">
