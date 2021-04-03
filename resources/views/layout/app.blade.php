@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="col-lg-10 mx-auto">
                             <div class="row">
-                                <div class="col-lg-4 mb-4 mb-lg-0">
+                                <div data-aos="fade-up-right" class="col-lg-4 mb-4 mb-lg-0">
                                     <h2 class="h4 text-white mb-4">
                                         Pylbox
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 172 172" style=" fill:#000000;">
@@ -93,7 +93,7 @@
                                         <li class="mb-1"><a class="reset-anchor" href="mailto:code.tieumomo@gmail.com"> <i class="fas fa-envelope text-muted mr-2 fa-fw"></i>code.tieumomo@gmail.com</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-4 mb-4 mb-lg-0">               
+                                <div data-aos="fade-up" class="col-lg-4 mb-4 mb-lg-0">               
                                     <h2 class="h4 text-white mb-4">Follow me</h2>
                                     <ul class="list-inline">
                                         <div class="row text-white text-small">
@@ -111,7 +111,7 @@
                                         </div>
                                     </ul>
                                 </div>
-                                <div class="col-lg-4 mb-4 mb-lg-0">
+                                <div data-aos="fade-up-left" class="col-lg-4 mb-4 mb-lg-0">
                                     <h2 class="h4 text-white mb-4">Pylation</h2>
                                     <ul class="list-unstyled mb-0">
                                         <li>
