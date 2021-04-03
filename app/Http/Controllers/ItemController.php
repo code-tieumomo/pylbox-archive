@@ -49,7 +49,7 @@ class ItemController extends Controller
         }
 
         $item = Item::create([
-            // 'title'       => $request->title,
+            'title'       => $request->title,
             'box_id'      => $request->box_id,
             'image'       => $request->image,
             'source'      => $request->source,

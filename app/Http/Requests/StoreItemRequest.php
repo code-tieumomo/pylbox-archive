@@ -42,13 +42,13 @@ class StoreItemRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'The Title filed is required !',
+            'title.required' => 'The Title field is required !',
             'box_id.required' => 'Please pick a box !',
-            'image.required' => 'The Image filed is required !',
-            'source.required' => 'The Source filed is required !',
-            'source_link.required' => 'The Source Link filed is required !',
-            'sumary.required' => 'The Sumary filed is required !',
-            'detail.required' => 'The Detail filed is required !',
+            'image.required' => 'The Image field is required !',
+            'source.required' => 'The Source field is required !',
+            'source_link.required' => 'The Source Link field is required !',
+            'sumary.required' => 'The Sumary field is required !',
+            'detail.required' => 'The Detail field is required !',
         ];
     }
 }

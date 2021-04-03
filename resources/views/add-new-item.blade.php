@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-7">
                     <h1 id="item-title">Add new item to box <img src="https://img.icons8.com/pastel-glyph/64/000000/box--v3.png"/></h1>
-                    <p class="text-muted mb-5">*All infomation is required <i class="fas fa-exclamation-triangle"></i></p>
+                    <p class="text-muted mb-5">*All infomation is required <i class="fas fa-exclamation-triangle"></i> Click on field name to read more !</p>
                 </div>
             </div>
 
@@ -22,7 +22,7 @@
                         <table class="tb-add">
                             <tr>
                                 <td>
-                                    <label id="label-title" for="title">Title</label>
+                                    <label id="label-title">Title</label>
 
                                 </td>
                                 <td>
@@ -31,7 +31,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label id="label-box" for="box">Box</label>
+                                    <label id="label-box">Box</label>
                                 </td>
                                 <td>
                                     <select name="box" id="box">
@@ -43,7 +43,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label id="label-image" for="image">Image</label>
+                                    <label id="label-image">Image</label>
                                 </td>
                                 <td>
                                     <input type="file" name="image" id="image">
@@ -52,7 +52,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label id="label-source" for="source">Source</label>
+                                    <label id="label-source">Source</label>
                                 </td>
                                 <td>
                                     <input type="text" name="source" id="source">
@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label id="label-source-link" for="source-link">Source Link</label>
+                                    <label id="label-source-link">Source Link</label>
                                 </td>
                                 <td>
                                     <input type="text" name="source-link" id="source-link" value="">
@@ -68,7 +68,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label id="label-sumary" for="sumary">Sumary</label>
+                                    <label id="label-sumary">Sumary</label>
                                 </td>
                                 <td>
                                     <textarea name="sumary" id="sumary"></textarea>
@@ -127,6 +127,60 @@
                 unsafeMessage: `
                     <h6>Title Field</h6>
                     <p>The title is the text indicating the nature of the item below it.</p>
+                `,
+            })
+        });
+        
+        $("#label-box").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Box Field</h6>
+                    <p>Which box do you want the item in? Codes, Games or Foods ... Please choose one.</p>
+                `,
+            })
+        });
+
+        $("#label-image").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Image Field</h6>
+                    <p>Pick an "avatar" for the item.</p>
+                `,
+            })
+        });
+
+        $("#label-source").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Source Field</h6>
+                    <p>Where do you get this item from?</p>
+                `,
+            })
+        });
+
+        $("#label-source-link").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Source Link Field</h6>
+                    <p>If you have a link for this item, please fill in this field (for copyright reasons). Or if you don't have one, enter "#" or "javascript: void (0)" (please read the <a target="_blank" href="javascript:void(0);">documentation</a> to be able to fill this field with the most accuracy).</p>
+                `,
+            })
+        });
+
+        $("#label-sumary").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Sumary Field</h6>
+                    <p>A brief summary of this item (the shorter the better).</p>
+                `,
+            })
+        });
+
+        $("#label-detail").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Detail Field</h6>
+                    <p>Detailed and complete information about this item.</p>
                 `,
             })
         });
@@ -204,6 +258,11 @@
                     } else if (result['status'] == 500) {
                         new Toast({
                             message: '🔴 Status: ' + result['status'] + '<br>Error: Some thing went wrong with our server ! Please try later 😥',
+                            type: 'danger',
+                        });
+                    } else if (result['status'] == 404) {
+                        new Toast({
+                            message: '🔴 Status: ' + result['status'] + '<br>Error: Server not found or you are trying to send item to a wrong server ! Please try later 😥',
                             type: 'danger',
                         });
                     }
