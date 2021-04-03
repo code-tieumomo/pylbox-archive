@@ -61,9 +61,7 @@
                 <header class="header">
                     <nav class="navbar navbar-expand-lg navbar-light px-0">
                         <button class="navbar-toggler navbar-toggler-right text-sm text-uppercase" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <svg class="svg-icon svg-icon-heavy svg-icon-sm text-dark">
-                                <use xlink:href="#menu-hamburger-1"> </use>
-                            </svg>
+                            <img width="24px" src="{{ asset('icons/menu.gif') }}"/>
                         </button><a class="navbar-brand" href="{{ route('home.index') }}"><img src="https://img.icons8.com/pastel-glyph/256/000000/box--v3.png" alt="" width="50"></a>
                     </nav>
                 </header>
