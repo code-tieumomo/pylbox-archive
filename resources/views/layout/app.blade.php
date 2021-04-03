@@ -23,6 +23,9 @@
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <!-- ToastJS -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/Toast.css') }}">
+        <!-- Vex -->
+        <link rel="stylesheet" href="{{ asset('css/vex.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/vex-theme-plain.css') }}"/>
         @yield('custom-css')
     </head>
     <body>
@@ -219,6 +222,9 @@
         </script>
         <!-- ToastJS -->
         <script type="text/javascript" src="{{ asset('js/Toast.js') }}"></script>
+        <!-- Vex -->
+        <script src="{{ asset('js/vex.combined.min.js') }}"></script>
+        <script>vex.defaultOptions.className = 'vex-theme-plain'</script>
         @yield('custom-js')
         <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">

@@ -22,7 +22,8 @@
                         <table class="tb-add">
                             <tr>
                                 <td>
-                                    <label for="title">Title</label>
+                                    <label id="label-title" for="title">Title</label>
+
                                 </td>
                                 <td>
                                     <input type="text" name="title" id="title">
@@ -30,7 +31,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="box">Box</label>
+                                    <label id="label-box" for="box">Box</label>
                                 </td>
                                 <td>
                                     <select name="box" id="box">
@@ -42,16 +43,16 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="image">Image</label>
+                                    <label id="label-image" for="image">Image</label>
                                 </td>
                                 <td>
                                     <input type="file" name="image" id="image">
-                                    <input type="hidden" name="imageConverted" id="imageConverted" value="No image found !">
+                                    <input type="hidden" name="imageConverted" id="imageConverted" value="null">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="source">Source</label>
+                                    <label id="label-source" for="source">Source</label>
                                 </td>
                                 <td>
                                     <input type="text" name="source" id="source">
@@ -59,15 +60,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="source-link">Source Link</label>
+                                    <label id="label-source-link" for="source-link">Source Link</label>
                                 </td>
                                 <td>
-                                    <input type="text" name="source-link" id="source-link">
+                                    <input type="text" name="source-link" id="source-link" value="">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="sumary">Sumary</label>
+                                    <label id="label-sumary" for="sumary">Sumary</label>
                                 </td>
                                 <td>
                                     <textarea name="sumary" id="sumary"></textarea>
@@ -82,15 +83,23 @@
 
                             .tb-add label {
                                 font-weight: bold;
-                                margin: 10px 30px 10px 10px;
+                                margin: 15px 0px 15px 10px;
                             }
 
                             .tb-add input, .tb-add select, .tb-add textarea {
                                 width: 100%;
-                                height: 30px;
+                                height: 38px;
+                                border: none;
+                                border-bottom: 1px solid black;
+                                outline: none;
+                            }
+
+                            .tb-add input[type=file] {
+                                margin-top: 10px;
+                                border: none;
                             }
                         </style>
-                        <h2>Detail</h2>
+                        <h2 id="label-detail">Detail</h2>
                         <div id="summernote" name="detail"></div><br>
                         <button id="btn-add" type="submit" class="btn btn-primary">Add</button>
                         <button id="btn-reset" type="reset" class="btn btn-secondary">Cancel</button>
@@ -113,6 +122,14 @@
             $('#summernote').summernote('code', '');
         });
 
+        $("#label-title").on('click', function(event) {
+            vex.dialog.alert({
+                unsafeMessage: `
+                    <h6>Title Field</h2>
+                `,
+            })
+        });
+
         document.title = "Add new item | Pylbox";
         $("#menu-add-new-item").addClass('active');
 
@@ -130,7 +147,7 @@
                 }
                 reader.readAsDataURL(file);
             } else {
-                $("#imageConverted").val("No image found !");
+                $("#imageConverted").val("null");
             }
         });
 

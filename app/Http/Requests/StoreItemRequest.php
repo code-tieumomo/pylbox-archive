@@ -33,4 +33,22 @@ class StoreItemRequest extends FormRequest
             'detail' => 'required',
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'title.required' => 'The Title filed is required !',
+            'box_id.required' => 'Please pick a box !',
+            'image.required' => 'The Image filed is required !',
+            'source.required' => 'The Source filed is required !',
+            'source_link.required' => 'The Source Link filed is required !',
+            'sumary.required' => 'The Sumary filed is required !',
+            'detail.required' => 'The Detail filed is required !',
+        ];
+    }
 }

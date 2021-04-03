@@ -48,12 +48,12 @@
 
             <h2 id="h2-relate" class="h3 mb-4">Related items</h2>
             <div id="item-relate" class="row">
-                @foreach ($relatedItems as $item)
+                @foreach ($relatedItems as $relatedItem)
                     <div data-aos="fade-up-right" class="col-lg-4 mb-4">
                         <div class="listing-item pl-0">
                             <div class="position-relative">
-                                <a class="reset-anchor d-block listing-img-holder" href="{{ route('items.show', ['id' => $item->id]) }}">
-                                    <img class="img-fluid rounded-lg" src="{{ $item->image }}" alt="">
+                                <a class="reset-anchor d-block listing-img-holder" href="{{ route('items.show', ['id' => $relatedItem->id]) }}">
+                                    <img class="img-fluid rounded-lg" src="{{ $relatedItem->image }}" alt="">
                                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"><span>Look inside</span>
                                         <svg class="svg-icon text-primary svg-icon-sm ml-2">
                                             <use xlink:href="#arrow-right-1"></use>
@@ -61,9 +61,9 @@
                                     </p>
                                 </a>
                             </div>
-                            <div class="py-3"><a class="reset-anchor" href="{{ route('items.show', ['id' => $item->id]) }}">
-                                <h2 class="h5 listing-item-heading">{{ $item->title }}</h2></a>
-                                <p class="text-small mb-0 listing-item-description">{{ $item->sumary }}</p>
+                            <div class="py-3"><a class="reset-anchor" href="{{ route('items.show', ['id' => $relatedItem->id]) }}">
+                                <h2 class="h5 listing-item-heading">{{ $relatedItem->title }}</h2></a>
+                                <p class="text-small mb-0 listing-item-description">{{ $relatedItem->sumary }}</p>
                             </div>
                         </div>
                     </div>
