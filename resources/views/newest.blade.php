@@ -54,47 +54,23 @@
                 @endforeach
             </div>
 
-            <marquee data-aos="fade-right" class="newest" behavior="alternate" direction="left" scrollamount="5">
-                <a class="view-all" href="">Boxes <span class="badge bg-primary down-position"><i class="fas fa-arrow-right"></i></span></a>
-            </marquee>
+            {{ $items->links() }}
             <style type="text/css">
-                .down-position {
-                    margin-left: 10px;
-                    top: 26px;
+                nav[role=navigation] {
+                    float: right;
+                    border: none;
+                }
+
+                nav[role=navigation] a {
+                    text-decoration: none;
                 }
             </style>
-
-            <div id="list-boxes" class="masonry-wrapper" style="position: relative; height: 2000px;">
-                @foreach ($boxes as $box)
-                    <div data-aos="@if ($box->id%3==1){{'fade-up-right'}}@elseif ($box->id%3==2){{'zoom-in'}}@else{{'fade-up-left'}}@endif" class="col-lg-4 col-md-6 grid-item mb-4">
-                        <div class="listing-item">
-                            <div class="position-relative">
-                                <ul class="list-inline listing-tags m-0">
-                                    <li class="list-inline-item"><a class="reset-anchor font-weight-normal text-gray text-small" href="detail.html">Box</a></li>
-                                </ul><a class="reset-anchor d-block listing-img-holder" href="javascript:void(0)"><img class="img-fluid" src="img/boxes/{{ Str::lower($box->name) }}-box.png" alt="">
-                                    <p class="mb-0 text-primary small d-flex align-items-center listing-btn"><span>Look inside</span>
-                                        <svg class="svg-icon text-primary svg-icon-sm ml-2">
-                                            <use xlink:href="#arrow-right-1"></use>
-                                        </svg>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="py-3"><a class="reset-anchor" href="detail.html">
-                                <h2 class="h5 listing-item-heading" id="box-0">{{ $box->name }}</h2></a>
-                                <p class="text-small mb-0 listing-item-description">{{ $box->description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
         </div>
     </div>
 @endsection
 
 @section('custom-js')
     <script type="text/javascript">
-        document.title = 'Home | Pylbox';
-
-        $("#menu-home").addClass('active');
+        document.title = 'Newest | Pylbox';
     </script>
 @endsection

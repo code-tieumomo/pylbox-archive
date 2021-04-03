@@ -17,3 +17,4 @@ Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/detail', 'ItemController@show')->name('items.show');
 Route::get('/add-new-item', 'ItemController@create')->name('items.create');
 Route::post('/add-new-item', 'ItemController@store')->name('items.store');
+Route::get('/newest', 'ItemController@index')->name('items.index');

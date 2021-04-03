@@ -18,7 +18,11 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::orderBy('id', 'desc')->simplePaginate(9);
+
+        return view('newest', [
+            'items' => $items
+        ]);
     }
 
     /**

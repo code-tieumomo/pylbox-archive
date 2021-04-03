@@ -43,6 +43,17 @@
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="btn-share-to-facebook" class="reset-anchor social-share-link facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u={{ route('items.show', ['id' => $item->id]) }}&display=popup&ref=plugin&src=share_button"><i class="fab fa-facebook-f mr-2"></i>Share</a></li>
                     </ul>
+
+                    <h2 class="h3 mb-4">Action</h2>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            Enter action's password
+                        </li>
+                        <li class="list-inline-item">
+                            <input type="password" name="password">
+                            <input type="submit" name="submit">
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -76,5 +87,14 @@
 @section('custom-js')
     <script type="text/javascript">
         document.title = "{{ $item->title }} | Pylbox";
+
+        $("input[type=submit]").on('click', function(event) {
+            event.preventDefault();
+            
+            new Toast({
+                message: '🔴 Wrong password ! Please try again !',
+                type: 'danger',
+            });
+        });
     </script>
 @endsection
