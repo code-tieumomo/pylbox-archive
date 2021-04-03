@@ -125,7 +125,8 @@
         $("#label-title").on('click', function(event) {
             vex.dialog.alert({
                 unsafeMessage: `
-                    <h6>Title Field</h2>
+                    <h6>Title Field</h6>
+                    <p>The title is the text indicating the nature of the item below it.</p>
                 `,
             })
         });
@@ -195,11 +196,18 @@
                 error: function(result){
                     $("#btn-add").prop('disabled', false);
                     $("#btn-add").html('Add');
-                    new Toast({
-                        message: '🔴 Status: ' + result['status'] + '<br>Error: ' + Object.values(result['responseJSON']['errors'])[0],
-                        type: 'danger',
-                        
-                    });
+                    if (result['status'] == 422) {
+                        new Toast({
+                            message: '🔴 Status: ' + result['status'] + '<br>Error: ' + Object.values(result['responseJSON']['errors'])[0],
+                            type: 'danger',
+                        });
+                    } else if (result['status'] == 500) {
+                        new Toast({
+                            message: '🔴 Status: ' + result['status'] + '<br>Error: Some thing went wrong with our server ! Please try later 😥',
+                            type: 'danger',
+                        });
+                    }
+                    
                 }
             });
 
